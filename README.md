@@ -58,7 +58,7 @@ Dataset statistics (number of nodes, edges, features, and sensitive attributes) 
 - **Runs**: 3 independent runs per dataset (random seeds 0, 1, 2)
 - **Model**: Graph Autoencoder (GAE), as used in the MORAL framework
 - **Evaluation Metrics**:
-  - **Utility**: Precision@K (K = 100 / 1000)
+  - **Utility**: Precision@1000
   - **Fairness**: Normalized Discounted KL-Divergence (NDKL)
 
 All experiments were executed on **Chameleon Cloud bare-metal infrastructure** to minimize hardware-induced variability.
@@ -102,20 +102,16 @@ As a result, this study focuses on **logic-faithful reproduction** rather than b
 ```
 
 MORAL/
-├── dataset/              # Raw dataset files
-├── data/                 # Dataset splits (generated locally)
-├── experiments/          # Evaluation scripts (Figure 3, 5, ranking metrics)
-├── figures/              # Reproduced figures
-├── datasets.py           # Dataset loaders
-├── moral.py              # MORAL implementation
-├── utils.py              # Utility functions
+├── dataset/              
+├── data/              
+├── experiments/        
+├── figures/        
+├── datasets.py         
+├── moral.py         
+├── utils.py            
 ├── README.md
 
 ````
-
-> ⚠️ **Large files such as model checkpoints (`.pt`) and dataset splits are intentionally excluded** due to GitHub size limits. All reported results can be regenerated using the provided scripts.
-
----
 
 ## 8. How to Reproduce
 
@@ -129,8 +125,12 @@ MORAL/
 4. Run evaluations:
 
    ```bash
+   python experiments/eval_rank_metrics.py --dataset <dataset>
    python experiments/eval_rank_metrics.py --dataset facebook
-   python experiments/eval_rank_metrics.py --dataset credit
+   ```
+  Example
+   ```bash
+   python experiments/eval_rank_metrics.py --dataset facebook
    ```
 5. Reproduce figures:
 
@@ -148,9 +148,3 @@ While the qualitative claims of MORAL are validated, this study highlights impor
 * Lack of released evaluation artifacts limits exact numerical reproduction.
 * Ranking-aware fairness remains sensitive to deployment-specific ranking protocols.
 * Behavior under dynamic graphs and large-scale industrial settings remains unexplored.
-
-Future work should focus on **deployable ranking-aware fairness evaluation** under realistic graph evolution scenarios.
-
----
-Tinggal bilang 👍
-```
