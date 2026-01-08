@@ -120,26 +120,18 @@ MORAL/
 3. Generate dataset splits:
    ```bash
    python experiments/generate_splits.py
-````
-
+   
 4. Run evaluations:
-
    ```bash
    python experiments/eval_rank_metrics.py --dataset <dataset>
-   python experiments/eval_rank_metrics.py --dataset facebook
-   ```
-  Example
+  **Example**
    ```bash
    python experiments/eval_rank_metrics.py --dataset facebook
-   ```
-5. Reproduce figures:
 
+5. Reproduce figures:
    ```bash
    python experiments/figure3.py
    python experiments/figure5.py
-   ```
-
----
 
 ## 9. Limitations and Future Work
 
