@@ -124,6 +124,7 @@ MORAL/
 4. Run evaluations:
    ```bash
    python experiments/eval_rank_metrics.py --dataset <dataset>
+   Example:
    ```bash
    python experiments/eval_rank_metrics.py --dataset facebook
 
@@ -131,7 +132,6 @@ MORAL/
    ```bash
    python experiments/figure3.py
    python experiments/figure5.py
-
 
 ## 9. Limitations and Future Work
 
